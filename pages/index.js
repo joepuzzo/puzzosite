@@ -24,6 +24,12 @@ export default function Home() {
           I love to build cool shit 🦖
         </p>
 
+        {/* <div>
+            <a href="/resume.pdf">
+             <button>Resume</button>
+            </a>
+        </div> */}
+
         <Calculator />
 
         <p className={styles.help}>
