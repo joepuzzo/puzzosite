@@ -159,14 +159,12 @@ const Calculator = () => {
     
         <h3>Whats that? Open Source Code!</h3>
 
-        <div>
+        <div style={{ display: 'flex'}}>
           <a href="https://teslamotors.github.io/informed"><img src="https://badgen.net/badge/Informed/Docs/purple" /></a>
           <a href="https://www.npmjs.com/package/informed"><img src="https://img.shields.io/npm/v/informed.svg" /></a>
           <a href="https://github.com/joepuzzo/informed"><img src="https://badgen.net/badge/gihub/main/green?icon=github" alt="github" /></a>
         </div>
         <InformedSandbox />
-
-      
     </div>
   );
 };

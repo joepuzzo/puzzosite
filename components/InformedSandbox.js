@@ -1,5 +1,6 @@
 import React from 'react';
 import { CodeBlock } from './CodeBlock';
+import styles from '../styles/CodeBlock.module.css';
 
 let code = `
 import { Form, Input, Text, Select, Debug } from 'informed';
@@ -29,5 +30,9 @@ export default function App() {
 `;
 
 export const InformedSandbox = () => {
-  return <CodeBlock code={code} />;
+  return (
+    <div className={styles.mobile}>
+      <CodeBlock code={code} />
+    </div>
+  );
 };
