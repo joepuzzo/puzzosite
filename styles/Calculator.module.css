@@ -1,0 +1,58 @@
+.calculator {
+  background-color: white;
+  border: 1px solid #eaeaea;
+  opacity: 0.95;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  border-radius: 20px;
+  width: 90%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.calculatorForm {
+  width: 70%;
+  margin: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .calculator{
+    width: 95%;
+    max-width: 600px;
+  }
+  .calculatorForm {
+    width: 90%;
+    margin: 3rem;
+  }
+  /* 0x979b6378622E92998E167Ba199C23E9a8B599979 */
+}
+
+@media only screen and (min-width: 768px) {
+  .calculator {
+    /* width: 30%; */
+    min-width: 750px;
+  }
+}
+
+.calculatorDisabled {
+  opacity: 0.5;
+}
+
+.coinSelectorLabel {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+
+.coinSelectorImg {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.skills { 
+  color: rebeccapurple;
+}
