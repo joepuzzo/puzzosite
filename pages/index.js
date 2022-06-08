@@ -12,7 +12,7 @@ export default function Home() {
         <title>Joe Puzzo</title>
         <meta name="description" content="Kick Ass Developer" />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="https://www.bitcoinunchained.com/imagelink.jpg" />
+        <meta property="og:image" content="https://www.bitcoinunchained.com/imagelink.png" />
       </Head>
 
       <main className={styles.main}>
@@ -29,7 +29,9 @@ export default function Home() {
         <p className={styles.help}>
           Download My Resume 
           <div>
-         
+            <a href="/resume.pdf">
+             <button>Download</button>
+            </a>
           </div>
         </p>
 

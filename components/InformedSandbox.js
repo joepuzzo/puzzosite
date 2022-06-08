@@ -2,7 +2,7 @@ import React from 'react';
 import { CodeBlock } from './CodeBlock';
 
 let code = `
-import { Form, Input, Text, Select, Checkbox, Relevant, Debug } from 'informed';
+import { Form, Input, Text, Select, Debug } from 'informed';
 import './style.css';
 
 const onSubmit = ({values}) => {
@@ -21,10 +21,6 @@ export default function App() {
         <option value="mx">Model X</option>
         <option value="my">Model Y</option>
       </Select>
-      <Checkbox name="married" label="Married?" />
-      <Relevant when={({ formState }) => formState.values.married}>
-        <Input name="spouse" label="Spouse" />
-      </Relevant>
       <button type="submit">Submit</button>
       <Debug />
     </Form>
