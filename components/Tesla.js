@@ -6,6 +6,8 @@ import { InformedSandbox } from './InformedSandbox';
 import { StatusMessage } from './StatusMessage';
 import { Tooltip } from './Tooltip/index.js';
 import { CarColor } from './CarColor';
+import { Code } from './Code';
+import { ShoutOuts } from './ShoutOuts';
 
 // Helper function for rounding
 const round = (num) => {
@@ -30,7 +32,7 @@ const CoinSelector = ({ coins, disabled, selected }) => {
     <>
       <label className={styles.coinSelectorLabel}>Select A Coin</label>
       { selected ? <img className={styles.coinSelectorImg} src={selected?.image_url} alt={`${selected?.name}-logo`} aria-label={`${selected?.name}-logo`} loading="lazy" height="18" width="18"></img> : null }
-      <Select name="coin" required disabled={disabled} options={coinOptions} initialValue="ETH"/>
+      <Select name="coin" required disabled={disabled} options={coinOptions} initialValue="DOGE"/>
     </>
   )
 }
@@ -154,49 +156,35 @@ const Calculator = () => {
   const disabledClass = disabled ? styles.calculatorDisabled : '';
 
   return (
-    <div className={`${styles.calculator} ${disabledClass}`}>
+    <div className={`${styles.calculator} ${disabledClass} tesla`}>
 
-        <div class="flex">
-          <h3>Lets start with something cool!</h3>
-          <Tooltip title="Info">
-            Here you see a demonstration of informed, a react based form library that I have worked on for years. 
-            It makes writing forms super fun and easy!
-          </Tooltip>
-        </div>
+        <h3>Accomplishments</h3>
 
-        {/* --------- Only Shows up in mobile --------- */}
-        <StatusMessage>
-            Here you see a demonstration of informed, a react based form library that I have worked on for years. 
-            It makes writing forms super fun and easy!  
+        <StatusMessage alwaysShow title="Informed">
+          I built Tesla’s open-source form library, <a href="https://teslamotors.github.io/informed">informed</a>, 
+          that makes creating complex forms simple and easy which provides ability to grab and manipulate values, 
+          validate fields, create custom inputs, etc., out of the box. Currently there are over <strong>100 git repos in Tesla </strong>
+          which use it and there has been over <strong>349k downloads internally.</strong> The package has received great 
+          reviews from users internal and external both in terms of quality and support. Publicly it gets over <strong>19k downloads every week.</strong> 
         </StatusMessage>
+
+        <h4>How about an example!</h4>
 
         <CarColor />
 
-        <div class="flex">
-          <h3>Look forms and API calls!</h3>
-          <Tooltip title="Info">
-            What better way to demonstrate some skills than with a demo! Below is a little crypto calculator. 
-            The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
-          </Tooltip>
-        </div>
+        <h4>But wait theres more!</h4>
 
-        {/* --------- Only Shows up in mobile --------- */}
-        <StatusMessage>
+        <StatusMessage alwaysShow title="More">
           What better way to demonstrate some skills than with a demo! Below is a little crypto calculator. 
-          The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
+          The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form! 
+          It formats and is highly dynamic!
         </StatusMessage>
        
         <Form className={styles.calculatorForm}>
           <CalculatorForm disabled={disabled} coins={coins} />
         </Form>
     
-        <div class="flex">
-          <h3>Whats that? Open Source Code!</h3>
-          <Tooltip title="Info">
-            Informed is an extensive, simple, and efficient solution for creating basic to complex forms in React.
-            Its a library I have been working on for years and makes writing forms super fun and easy!  
-          </Tooltip>
-        </div>
+        <h4>Want to see more? See these Links!</h4>
 
         <div style={{ display: 'flex'}}>
           <a href="https://teslamotors.github.io/informed"><img src="https://badgen.net/badge/Informed/Docs/purple" /></a>
@@ -204,13 +192,28 @@ const Calculator = () => {
           <a href="https://github.com/joepuzzo/informed"><img src="https://badgen.net/badge/gihub/main/green?icon=github" alt="github" /></a>
         </div>
 
-        {/* --------- Only Shows up in mobile --------- */}
-        <StatusMessage>
-          Informed is an extensive, simple, and efficient solution for creating basic to complex forms in React.
-          Its a library I have been working on for years and makes writing forms super fun and easy!
+        <h4>I do things with phone numbers!</h4>
+
+        <Code>
+          {"1231231234 ---> +1 (123)-123-1234"}
+        </Code>
+
+        <StatusMessage alwaysShow title="intl-phone">
+          I built the INTL-phone library which brings much needed standardization to phone numbers globally 
+          and reduced the amount of data integrity issues on backend systems. See link below!
         </StatusMessage>
 
-        <InformedSandbox />
+        <a href="https://github.com/joepuzzo/phone"><img src="https://badgen.net/badge/gihub/main/green?icon=github" alt="github" /></a>
+
+        <h4>I explored Our internal github!</h4>
+
+        <StatusMessage alwaysShow title="gitexplorer">
+          I created a package, gitexplorer, that scrapes our internal gihub to get insights into the usage/impact of internal tooling.
+        </StatusMessage>
+
+        <h3>Here Are Some Shout Outs!</h3>
+
+        <ShoutOuts />
 
     </div>
   );

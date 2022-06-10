@@ -4,7 +4,7 @@ const Info = () => {
   return <div className="info"><small className="infoIcon">i</small></div>
 }
 
-export const StatusMessage = ({ children }) => {
+export const StatusMessage = ({ children, alwaysShow, title="Info" }) => {
   return (
     <div style={{
       width: '100%',
@@ -20,14 +20,14 @@ export const StatusMessage = ({ children }) => {
       // textAlign: 'center',
       maxWidth: '500px'
       // boxShadow: 'rgba(100, 100, 111, 0.2) 0px 7px 29px 0px'
-    }} className="not-mobile">
+    }} className={ !alwaysShow ? "not-mobile" : ""}>
       <div style={{
         display: 'flex',
         marginBottom: '10px'
       }}>
         <Info />
         <strong>
-          Info 
+          {title} 
         </strong>
       </div>
       <small>
