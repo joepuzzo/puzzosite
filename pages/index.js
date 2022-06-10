@@ -21,7 +21,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          I love to build cool shit 🦖
+          I love to build cool Things! 🦖
         </p>
 
         {/* <div>

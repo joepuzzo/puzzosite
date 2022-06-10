@@ -3,6 +3,9 @@ import styles from '../styles/Calculator.module.css';
 import useGet from '../hooks/useGet';
 import { Form, Input, Select, Debug, useFieldState, utils, useFieldApi } from 'informed';
 import { InformedSandbox } from './InformedSandbox';
+import { StatusMessage } from './StatusMessage';
+import { Tooltip } from './Tooltip/index.js';
+
 // Helper function for rounding
 const round = (num) => {
   const number = +num;
@@ -152,19 +155,47 @@ const Calculator = () => {
   return (
     <div className={`${styles.calculator} ${disabledClass}`}>
         {/* <h2 className={styles.skills}>S K I L L S</h2> */}
-        <h3>Wow I can make forms and API calls!</h3>
+
+        <div class="flex">
+          <h3>Look forms and API calls!</h3>
+          <Tooltip title="Info">
+            What better way to demonstrate some skills than with a demo! Above is a little crypto calculator. 
+            The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
+          </Tooltip>
+        </div>
+       
+
         <Form className={styles.calculatorForm}>
           <CalculatorForm disabled={disabled} coins={coins} />
         </Form>
+
+        {/* <StatusMessage>
+          What better way to demonstrate some skills than with a demo! Above is a little crypto calculator. 
+          The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
+        </StatusMessage> */}
     
-        <h3>Whats that? Open Source Code!</h3>
+        <div class="flex">
+          <h3>Whats that? Open Source Code!</h3>
+          <Tooltip title="Info">
+            Informed is an extensive, simple, and efficient solution for creating basic to complex forms in React.
+            Its a library I have been working on for years and makes writing forms super fun and easy!  
+          </Tooltip>
+        </div>
 
         <div style={{ display: 'flex'}}>
           <a href="https://teslamotors.github.io/informed"><img src="https://badgen.net/badge/Informed/Docs/purple" /></a>
           <a href="https://www.npmjs.com/package/informed"><img src="https://img.shields.io/npm/v/informed.svg" /></a>
           <a href="https://github.com/joepuzzo/informed"><img src="https://badgen.net/badge/gihub/main/green?icon=github" alt="github" /></a>
         </div>
+
+
+        {/* <StatusMessage>
+          Informed is an extensive, simple, and efficient solution for creating basic to complex forms in React.
+          Its a library I have been working on for years and makes writing forms super fun and easy!
+        </StatusMessage> */}
+
         <InformedSandbox />
+
     </div>
   );
 };

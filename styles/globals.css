@@ -218,3 +218,127 @@ a > img {
   border-radius: 7px;
   margin: 7px;
 }
+
+/* .infoIcon { 
+  background-color: #3E6AE1;
+  color: white;
+  border-radius: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 3px;
+  border-radius: 50%;
+  margin-right: 8px;
+} */
+
+
+
+.infoIcon { 
+  border-radius: 50%;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 2px solid #3E6AE1;
+  font-weight: bold;
+  background-color: #3E6AE1;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* .infoIcon { 
+  border-radius: 50%;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  border-radius: 50%;
+  color: #3E6AE1;
+  margin-right: 8px;
+  border: 2px solid #3E6AE1;
+} */
+
+/* .infoIcon { 
+  color: #3E6AE1;
+  margin-right: 8px;
+} */
+
+.info {
+  /* margin-bottom: 1rem; */
+  margin-top: -3px;
+}
+
+.ant-popover {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+  padding-bottom: 10px;
+}
+
+.ant-popover-title {
+  padding: 5px 16px 4px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow {
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+  -ms-transform: translateX(-50%) rotate(45deg);
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.ant-popover-arrow {
+  position: absolute;
+  display: block;
+  width: 8.48528137px;
+  height: 8.48528137px;
+  background: transparent;
+  border-style: solid;
+  border-width: 4.24264069px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow,
+.ant-popover-placement-topRight > .ant-popover-content > .ant-popover-arrow {
+  bottom: 6.2px;
+  border-top-color: transparent;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  border-left-color: transparent;
+  -webkit-box-shadow: 3px 3px 7px rgb(0 0 0 / 7%);
+  box-shadow: 3px 3px 7px rgb(0 0 0 / 7%);
+}
+
+.ant-popover-inner {
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.15) \9;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15) \9;
+}
+
+.ant-popover-inner-content {
+  padding: 12px 16px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+
+.flex {
+  display: flex;
+  align-items: center;
+}

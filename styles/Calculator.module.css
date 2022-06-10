@@ -17,7 +17,7 @@
 
 .calculatorForm {
   width: 70%;
-  margin: 3rem;
+  margin: 2rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -27,7 +27,7 @@
   }
   .calculatorForm {
     width: 90%;
-    margin: 3rem;
+    margin: 2rem;
   }
   /* 0x979b6378622E92998E167Ba199C23E9a8B599979 */
 }
