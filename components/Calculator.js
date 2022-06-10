@@ -156,23 +156,24 @@ const Calculator = () => {
     <div className={`${styles.calculator} ${disabledClass}`}>
         {/* <h2 className={styles.skills}>S K I L L S</h2> */}
 
+        {/* Only Shows up in mobile */}
         <div class="flex">
           <h3>Look forms and API calls!</h3>
           <Tooltip title="Info">
-            What better way to demonstrate some skills than with a demo! Above is a little crypto calculator. 
+            What better way to demonstrate some skills than with a demo! Below is a little crypto calculator. 
             The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
           </Tooltip>
         </div>
-       
 
+        {/* --------- Only Shows up in mobile --------- */}
+        <StatusMessage>
+          What better way to demonstrate some skills than with a demo! Below is a little crypto calculator. 
+          The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
+        </StatusMessage>
+       
         <Form className={styles.calculatorForm}>
           <CalculatorForm disabled={disabled} coins={coins} />
         </Form>
-
-        {/* <StatusMessage>
-          What better way to demonstrate some skills than with a demo! Above is a little crypto calculator. 
-          The page first loads the current price of the top cryptocurrencys, then populates the values in a formatted and interactive form!  
-        </StatusMessage> */}
     
         <div class="flex">
           <h3>Whats that? Open Source Code!</h3>
@@ -188,11 +189,11 @@ const Calculator = () => {
           <a href="https://github.com/joepuzzo/informed"><img src="https://badgen.net/badge/gihub/main/green?icon=github" alt="github" /></a>
         </div>
 
-
-        {/* <StatusMessage>
+        {/* --------- Only Shows up in mobile --------- */}
+        <StatusMessage>
           Informed is an extensive, simple, and efficient solution for creating basic to complex forms in React.
           Its a library I have been working on for years and makes writing forms super fun and easy!
-        </StatusMessage> */}
+        </StatusMessage>
 
         <InformedSandbox />
 

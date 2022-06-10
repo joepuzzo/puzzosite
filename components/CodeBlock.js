@@ -100,6 +100,9 @@ input[type="checkbox"] {
 
   display: grid;
   place-content: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-left: 5px;
 }
 
 input[type="checkbox"]::before {

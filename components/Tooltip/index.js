@@ -28,7 +28,7 @@ export const Tooltip = ({ children, title }) => {
   };
 
   return (
-    <>
+    <div className="mobile ml-1">
       <Info
         ifoRef={triggerElem}
         onClick={(e) => {
@@ -52,6 +52,6 @@ export const Tooltip = ({ children, title }) => {
           </TooltipPopover>
         </Portal>
       )}
-    </>
+    </div>
   );
 };
