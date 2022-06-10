@@ -12,7 +12,7 @@ export default function Home() {
         <title>Joe Puzzo</title>
         <meta name="description" content="Kick Ass Developer" />
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:image" content="https://www.bitcoinunchained.com/imagelink.png" />
+        <meta property="og:image" content="https://www.joepuzzo.com/imagelink.png" />
       </Head>
 
       <main className={styles.main}>
