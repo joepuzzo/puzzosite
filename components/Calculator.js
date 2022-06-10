@@ -154,9 +154,7 @@ const Calculator = () => {
 
   return (
     <div className={`${styles.calculator} ${disabledClass}`}>
-        {/* <h2 className={styles.skills}>S K I L L S</h2> */}
 
-        {/* Only Shows up in mobile */}
         <div class="flex">
           <h3>Look forms and API calls!</h3>
           <Tooltip title="Info">
