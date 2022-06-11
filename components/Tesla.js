@@ -158,11 +158,22 @@ const Calculator = () => {
   return (
     <div className={`${styles.calculator} ${disabledClass} tesla`}>
 
+        <h3>Who am I? What do I do?</h3>
+
+        <StatusMessage alwaysShow title="Me">
+          I built and maintain Tesla’s most used open-source library's <a href="https://github.com/joepuzzo/informed">informed</a>. 
+          Im obsessed with <strong>zero dependency</strong> so I additionally work on internal shared libraries. I work hard to make writing code
+          fun and improving developer performance. But thats just part of my job here, in addition, I work on the pricing team. 
+          We build an internal tool called Barker, because the price is right 🙂 This tool saves hours of time for finance to change car pricing.  
+          How? By allowing users to make bulk changes, simulate them, test them, and send them through a formal process that ends with approval from the Mater Of Coin.
+        </StatusMessage>
+
+
         <h3>Accomplishments</h3>
 
         <StatusMessage alwaysShow title="Informed">
-          I built Tesla’s open-source form library, <a href="https://teslamotors.github.io/informed">informed</a>, 
-          that makes creating complex forms simple and easy which provides ability to grab and manipulate values, 
+          Tesla’s open-source form library, <a href="https://teslamotors.github.io/informed">informed</a>, 
+          makes creating complex forms simple and easy, providing the ability to grab and manipulate values, 
           validate fields, create custom inputs, etc., out of the box. Currently there are over <strong>100 git repos in Tesla </strong>
           which use it and there has been over <strong>349k downloads internally.</strong> The package has received great 
           reviews from users internal and external both in terms of quality and support. Publicly it gets over <strong>19k downloads every week.</strong> 
