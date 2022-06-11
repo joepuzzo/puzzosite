@@ -164,7 +164,7 @@ const Calculator = () => {
           I built and maintain Tesla’s most used open-source library's <a href="https://github.com/joepuzzo/informed">informed</a>. 
           Im obsessed with <strong>zero dependency</strong> so I additionally work on internal shared libraries. I work hard to make writing code
           fun and improving developer performance. But thats just part of my job here, in addition, I work on the pricing team. 
-          We build an internal tool called Barker, because the price is right 🙂 This tool saves hours of time for finance to change car pricing.  
+          We built an internal tool called Barker, because the price is right 🙂 This tool saves hours of time for finance to change car pricing.  
           How? By allowing users to make bulk changes, simulate them, test them, and send them through a formal process that ends with approval from the Mater Of Coin.
         </StatusMessage>
 
