@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Prism from "Prismjs";
+import Prism from "prismjs";
 import "prismjs/components/prism-json";
 
 export const Code = ({ children }) => {
