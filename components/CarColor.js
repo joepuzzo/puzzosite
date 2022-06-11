@@ -1,4 +1,5 @@
-import { Form, Select, Debug, useFieldState } from 'informed';
+import { Form, Select, useFieldState } from 'informed';
+import { Debug } from './Debug';
 
 const SVG = () => {
   const { value } = useFieldState('color');
@@ -487,7 +488,7 @@ export const CarColor = () => (
       <option value="pink">Pink</option>
     </Select>
     {/* <button type="submit">Submit</button> */}
-    {/* <Debug values /> */}
+    <Debug dirty values />
     <br />
     <SVG />
   </Form>
