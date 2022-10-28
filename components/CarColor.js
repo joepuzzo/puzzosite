@@ -1,17 +1,16 @@
 import { Form, Select, useFieldState } from 'informed';
 import { Debug } from './Debug';
 
-const SVG = () => {
-  const { value } = useFieldState('color');
+export const Car = ({ value, width, height }) => {
 
   return (
     <div className={`car-color-${value}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="554.349"
+        width={ width ?? "554.349"}
         className="car-svg-size"
-        height="231.889"
-        viewBox="0 0 554.349 231.889">
+        height={ height ?? "231.889"}
+        viewBox={`0 0 ${width ?? "554.349"} ${height ?? 231.889}`}>
         <g
           id="Group_2"
           data-name="Group 2"
@@ -478,6 +477,12 @@ const SVG = () => {
     </div>
   );
 };
+
+const SVG = () => {
+  const { value } = useFieldState('color');
+
+  return <Car value={value}/>
+}
 
 export const CarColor = () => (
   <Form autocomplete="off">
