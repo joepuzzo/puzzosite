@@ -6,6 +6,7 @@ import { InformedSandbox } from './InformedSandbox';
 import { StatusMessage } from './StatusMessage';
 import { Tooltip } from './Tooltip/index.js';
 import { CarColor } from './CarColor';
+import Image from 'next/image'
 
 // Helper function for rounding
 const round = (num) => {
@@ -155,6 +156,16 @@ const Calculator = () => {
 
   return (
     <div className={`${styles.calculator} ${disabledClass}`}>
+
+        <div>
+        <Image
+          src="/me.png"
+          alt="Picture of the author"
+          width={350}
+          height={350}
+          className="me"
+        />
+        </div>
 
         <div class="flex">
           <h3>Lets start with something cool!</h3>

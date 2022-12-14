@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "informed": "^4.16.1",
+    "informed": "^4.37.1",
     "next": "10.2.2",
     "prismjs": "^1.28.0",
     "react": "17.0.2",
