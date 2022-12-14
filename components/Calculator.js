@@ -127,12 +127,12 @@ const CurrentValue = () => {
 
 const Flipper = ({ front, back }) => {
   return (
-    <div class="flip-container">
-      <div class="flipper">
-        <div class="front">
+    <div className="flip-container">
+      <div className="flipper">
+        <div clclassNameass="front">
           {front}
         </div>
-        <div class="back">
+        <div className="back">
           {back}
         </div>
       </div>
@@ -205,7 +205,7 @@ const Calculator = () => {
             </div>
           )}/>
 
-        <div class="flex">
+        <div className="flex">
           <h3>Lets start with something cool!</h3>
           <Tooltip title="Info">
             Here you see a demonstration of informed, a react based form library that I have worked on for years. 
@@ -221,7 +221,7 @@ const Calculator = () => {
 
         <CarColor />
 
-        <div class="flex">
+        <div className="flex">
           <h3>Look forms and API calls!</h3>
           <Tooltip title="Info">
             What better way to demonstrate some skills than with a demo! Below is a little crypto calculator. 
@@ -239,7 +239,7 @@ const Calculator = () => {
           <CalculatorForm disabled={disabled} coins={coins} />
         </Form>
     
-        <div class="flex">
+        <div className="flex">
           <h3>Whats that? Open Source Code!</h3>
           <Tooltip title="Info">
             Informed is an extensive, simple, and efficient solution for creating basic to complex forms in React.
