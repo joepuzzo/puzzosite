@@ -13,6 +13,24 @@ body {
   border-radius: 50%;
 }
 
+.me-back {
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.me-back-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media only screen and (max-width: 768px) {
   .mobile {
     display: none;
@@ -543,4 +561,49 @@ a > img {
   .car-svg-size {
     width: 280.349px !important;
   }
+}
+
+
+/* entire container, keeps perspective */
+.flip-container {
+	/* perspective: 1000px; */
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .front, .back {
+	width: 350px;
+	height: 350px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
 }

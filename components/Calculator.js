@@ -14,6 +14,10 @@ const round = (num) => {
   return +(number.toFixed(8))
 }
 
+const Info = () => {
+  return <div className="info"><small className="infoIcon">i</small></div>
+}
+
 /* --------------------------------------------- CoinSelector  --------------------------------------------- */
 const CoinSelector = ({ coins, disabled, selected }) => {
 
@@ -121,6 +125,21 @@ const CurrentValue = () => {
   )
 }
 
+const Flipper = ({ front, back }) => {
+  return (
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">
+          {front}
+        </div>
+        <div class="back">
+          {back}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* --------------------------------------------- Calculator Form  --------------------------------------------- */
 const CalculatorForm = ({ disabled, coins, onChange }) => {
 
@@ -157,15 +176,34 @@ const Calculator = () => {
   return (
     <div className={`${styles.calculator} ${disabledClass}`}>
 
-        <div>
-        <Image
-          src="/me.png"
-          alt="Picture of the author"
-          width={350}
-          height={350}
-          className="me"
-        />
-        </div>
+        <Flipper 
+          front={(
+            <Image
+              src="/me.png"
+              alt="Picture of the author"
+              width={350}
+              height={350}
+              className="me"
+            />)
+          } 
+          back={(
+            <div className="me-back">
+              <div className="me-back-content">
+                <div style={{ display: 'flex', marginBottom: '10px' }}>
+                  <Info />
+                  <strong>
+                  A Little About Myself!
+                  </strong>
+                </div>
+                <small>
+                  I love robots and I love Javascript! I love them so much I have a youtube channel dedicated to them  <a href="https://www.youtube.com/@robotjs">here</a>.
+                  I built and maintain Tesla’s most used open-source library's informed, Informed is an extensive react form library thats easy and fun to use. 
+                  I work hard to make writing code fun and improving developer performance. If you were to ask me what is the single most important thing in software design
+                  I would respond with "simplicity". Im obsessed with simplicity as it makes any system more lean and easier to maintain.
+                </small>
+              </div>
+            </div>
+          )}/>
 
         <div class="flex">
           <h3>Lets start with something cool!</h3>
