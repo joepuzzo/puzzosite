@@ -351,7 +351,12 @@ const Calculator = () => {
 
       <embed
         src="https://robot-viewer-qfmqx.ondigitalocean.app/"
-        style={{ width: "100%", height: "1000px", marginTop: "2rem" }}
+        style={{
+          width: "100%",
+          height: "1000px",
+          marginTop: "2rem",
+          borderRadius: "10px",
+        }}
       />
     </div>
   );
