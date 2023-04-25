@@ -209,7 +209,7 @@ const Calculator = () => {
   const disabledClass = disabled ? styles.calculatorDisabled : "";
 
   return (
-    <div className={`${styles.calculator} ${disabledClass}`}>
+    <div className={`calculator ${disabledClass}`}>
       <Flipper
         front={
           <Image
@@ -231,13 +231,10 @@ const Calculator = () => {
                 I love robots and I love Javascript! I love them so much I have
                 a youtube channel dedicated to them{" "}
                 <a href="https://www.youtube.com/@robotjs">here</a>. I built and
-                maintain Tesla’s most used open-source library's informed,
-                Informed is an extensive react form library thats easy and fun
-                to use. I work hard to make writing code fun and improving
-                developer performance. If you were to ask me what is the single
-                most important thing in software design I would respond with
-                "simplicity". Im obsessed with simplicity as it makes any system
-                more lean and easier to maintain.
+                maintain Tesla’s open source form library informed, Informed is
+                an extensive react form library thats easy and fun to use. Im
+                obsessed with simplicity as it makes any system more lean and
+                easier to maintain.
               </small>
             </div>
           </div>

@@ -1,7 +1,13 @@
-import React from 'react';
-import { Sandpack } from '@codesandbox/sandpack-react';
+import React from "react";
+import { Sandpack } from "@codesandbox/sandpack-react";
 
 const style = `
+
+body {
+  background-color: rgb(20,20,20);
+  color: white;
+}
+
 label{
   font-weight: bold;
 }
@@ -25,8 +31,9 @@ select {
 
   /* background-color: #222222; */
 
-  /* background-color: rgb(58, 61, 65);
-  color: white; */
+  /* For Dark Mode */
+  background-color: rgb(58, 61, 65);
+  color: white;
 }
 
 .radio-label {
@@ -136,39 +143,39 @@ input[type="checkbox"]:disabled {
 `;
 
 const theme = {
-  "colors": {
-    "surface1": "#151515",
-    "surface2": "#252525",
-    "surface3": "#2F2F2F",
-    "clickable": "#999999",
-    "base": "#808080",
-    "disabled": "#4D4D4D",
-    "hover": "#C5C5C5",
-    "accent": "#90e86f",
-    "error": "#b08df8",
-    "errorSurface": "#dac1fb"
+  colors: {
+    surface1: "#151515",
+    surface2: "#252525",
+    surface3: "#2F2F2F",
+    clickable: "#999999",
+    base: "#808080",
+    disabled: "#4D4D4D",
+    hover: "#C5C5C5",
+    accent: "#90e86f",
+    error: "#b08df8",
+    errorSurface: "#dac1fb",
   },
-  "syntax": {
-    "plain": "#f0fdaf",
-    "comment": {
-      "color": "#757575",
-      "fontStyle": "italic"
+  syntax: {
+    plain: "#f0fdaf",
+    comment: {
+      color: "#757575",
+      fontStyle: "italic",
     },
-    "keyword": "#e5fd78",
-    "tag": "#f0fdaf",
-    "punctuation": "#ffffff",
-    "definition": "#eeeeee",
-    "property": "#90e86f",
-    "static": "#ffffff",
-    "string": "#dafecf"
+    keyword: "#e5fd78",
+    tag: "#f0fdaf",
+    punctuation: "#ffffff",
+    definition: "#eeeeee",
+    property: "#90e86f",
+    static: "#ffffff",
+    string: "#dafecf",
   },
-  "font": {
-    "body": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\"",
-    "mono": "\"Fira Mono\", \"DejaVu Sans Mono\", Menlo, Consolas, \"Liberation Mono\", Monaco, \"Lucida Console\", monospace",
-    "size": "13px",
-    "lineHeight": "20px"
-  }
-}
+  font: {
+    body: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+    mono: '"Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace',
+    size: "13px",
+    lineHeight: "20px",
+  },
+};
 
 export const CodeBlock = ({ code }) => {
   return (
@@ -176,22 +183,22 @@ export const CodeBlock = ({ code }) => {
       template="react"
       theme={theme}
       files={{
-        '/App.js': code,
-        '/style.css': {
+        "/App.js": code,
+        "/style.css": {
           code: style,
-          hidden: true
-        }
+          hidden: true,
+        },
       }}
       options={{
         showLineNumbers: true,
         showNavigator: true,
-        editorHeight: 570
+        editorHeight: 570,
       }}
       customSetup={{
         dependencies: {
-          informed: 'latest'
+          informed: "latest",
         },
-        entry: '/index.js'
+        entry: "/index.js",
       }}
     />
   );

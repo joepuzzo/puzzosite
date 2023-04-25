@@ -1,28 +1,31 @@
-import { Form, Select, useFieldState } from 'informed';
-import { Debug } from './Debug';
+import { Form, Select, useFieldState } from "informed";
+import { Debug } from "./Debug";
 
 export const Car = ({ value, width, height }) => {
-
   return (
-    <div className={`car-color-${value}`}>
+    <div className={`car-color-${value} car`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width={ width ?? "554.349"}
+        // width={width ?? "554.349"}
         className="car-svg-size"
-        height={ height ?? "231.889"}
-        viewBox={`0 0 ${width ?? "554.349"} ${height ?? 231.889}`}>
+        // height={height ?? "231.889"}
+        viewBox={`0 0 ${width ?? "554.349"} ${height ?? 231.889}`}
+      >
         <g
           id="Group_2"
           data-name="Group 2"
-          transform="translate(-205.632 -671.078)">
+          transform="translate(-205.632 -671.078)"
+        >
           <g
             id="Group_5"
             data-name="Group 5"
-            transform="translate(206.591 672.034)">
+            transform="translate(206.591 672.034)"
+          >
             <g
               id="Group_2-2"
               data-name="Group 2"
-              transform="translate(215.224 0.047)">
+              transform="translate(215.224 0.047)"
+            >
               <path
                 id="Fill-1"
                 class="cls-1"
@@ -479,10 +482,10 @@ export const Car = ({ value, width, height }) => {
 };
 
 const SVG = () => {
-  const { value } = useFieldState('color');
+  const { value } = useFieldState("color");
 
-  return <Car value={value}/>
-}
+  return <Car value={value} />;
+};
 
 export const CarColor = () => (
   <Form autocomplete="off">
@@ -498,4 +501,3 @@ export const CarColor = () => (
     <SVG />
   </Form>
 );
-

@@ -2,8 +2,12 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import BubbleBackground from "../components/BubbleBackground";
 import Calculator from "../components/Calculator";
+import { useContext } from "react";
+import { AppContext } from "./_app";
 
 export default function Home() {
+  const { toggleTheme, theme } = useContext(AppContext);
+
   return (
     <div className={styles.container}>
       <BubbleBackground />
@@ -20,7 +24,12 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Joe Puzzo</h1>
 
-        <p className={styles.description}>I love to build cool Things! 🦖</p>
+        <p className="description">
+          I love to build cool Things!{" "}
+          <button className="emoji-button" onClick={toggleTheme}>
+            {theme === "theme-dark" ? `☀️` : `🌕`}
+          </button>{" "}
+        </p>
 
         {/* <div>
             <a href="/resume.pdf">
@@ -40,7 +49,7 @@ export default function Home() {
         </p>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className="footer">
         <a className="inverse-link" href="https://github.com/joepuzzo">
           Github
         </a>
