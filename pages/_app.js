@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Analytics } from "@vercel/analytics/dist/react";
 import "../styles/globals.css";
 import "../styles/prism.css";
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
     <AppContext.Provider value={{ theme, setTheme, toggleTheme }}>
       <div id="portal-root"></div>
       <Component {...pageProps} />
+      <Analytics />
     </AppContext.Provider>
   );
 }

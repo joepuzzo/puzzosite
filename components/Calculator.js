@@ -167,7 +167,7 @@ const Flipper = ({ front, back }) => {
   return (
     <div className="flip-container">
       <div className="flipper">
-        <div clclassNameass="front">{front}</div>
+        <div className="front">{front}</div>
         <div className="back">{back}</div>
       </div>
     </div>
