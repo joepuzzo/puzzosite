@@ -64,8 +64,9 @@ export const Tooltip = ({ children, title, openOnMount, hint }) => {
             coords={coords}
             tooltipRef={tooltipRef}
             title={title}
-            updateTooltipCoords={() =>
-              updateTooltipCoords(btnRef.current.buttonNode)
+            updateTooltipCoords={
+              () => {}
+              // updateTooltipCoords(btnRef.current.buttonNode)
             }
           >
             {showHint ? (

@@ -355,6 +355,59 @@ const Calculator = () => {
           borderRadius: '10px'
         }}
       />
+
+      <br />
+      <br />
+
+      <div className="flex">
+        <h3>I Run a Robotics Youtube Channel!</h3>
+        <Tooltip title="Robotjs">
+          <a
+            href="https://youtube.com/@robotjs"
+            target="_blank"
+            style={{ color: 'rgb(182, 90, 190)' }}
+          >
+            @robojs
+          </a>{' '}
+          is a channel for showing people how they can get into robotics with
+          hight level programming languages such as javascript. It also aims to
+          show off differnt types of robot arms and educate people on things
+          like kinematics.
+        </Tooltip>
+      </div>
+
+      {/* --------- Only Shows up in mobile --------- */}
+      <StatusMessage title="Robotjs">
+        <a
+          href="https://youtube.com/@robotjs"
+          target="_blank"
+          style={{ color: 'rgb(182, 90, 190)' }}
+        >
+          @robojs
+        </a>{' '}
+        is a channel for showing people how they can get into robotics with
+        hight level programming languages such as javascript. It also aims to
+        show off differnt types of robot arms and educate people on things like
+        kinematics.
+      </StatusMessage>
+
+      <div
+        style={{
+          width: '100%',
+          marginTop: '2rem',
+          borderRadius: '10px'
+        }}
+      >
+        <iframe
+          width="100%"
+          height="500px"
+          src="https://www.youtube.com/embed/kI9uqtNThmA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
     </div>
   );
 };
