@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const Info = () => {
   return (
@@ -8,16 +8,21 @@ const Info = () => {
   );
 };
 
-export const StatusMessage = ({ children, alwaysShow, title = "Info" }) => {
+export const StatusMessage = ({
+  children,
+  alwaysShow,
+  title = 'Info',
+  icon
+}) => {
   return (
-    <div className={`status-message ${!alwaysShow ? "not-mobile" : ""}`}>
+    <div className={`status-message ${!alwaysShow ? 'not-mobile' : ''}`}>
       <div
         style={{
-          display: "flex",
-          marginBottom: "10px",
+          display: 'flex',
+          marginBottom: '10px'
         }}
       >
-        <Info />
+        {icon ? icon : <Info />}
         <strong>{title}</strong>
       </div>
       <small>{children}</small>

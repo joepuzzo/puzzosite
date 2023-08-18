@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useMemo, useRef } from "react";
-import styles from "../styles/Calculator.module.css";
-import useGet from "../hooks/useGet";
+import React, { useCallback, useEffect, useMemo, useRef } from 'react';
+import styles from '../styles/Calculator.module.css';
+import useGet from '../hooks/useGet';
 import {
   Form,
   Input,
@@ -8,13 +8,13 @@ import {
   Debug,
   useFieldState,
   utils,
-  useFieldApi,
-} from "informed";
-import { InformedSandbox } from "./InformedSandbox";
-import { StatusMessage } from "./StatusMessage";
-import { Tooltip } from "./Tooltip/index.js";
-import { CarColor } from "./CarColor";
-import Image from "next/image";
+  useFieldApi
+} from 'informed';
+import { InformedSandbox } from './InformedSandbox';
+import { StatusMessage } from './StatusMessage';
+import { Tooltip } from './Tooltip/index.js';
+import { CarColor } from './CarColor';
+import Image from 'next/image';
 
 // Helper function for rounding
 const round = (num) => {
@@ -70,16 +70,16 @@ const CoinSelector = ({ coins, disabled, selected }) => {
 const CoinPrice = ({ disabled, selected }) => {
   const { formatter, parser } = useMemo(
     () =>
-      utils.createIntlNumberFormatter("en-US", {
-        style: "currency",
-        currency: "USD",
+      utils.createIntlNumberFormatter('en-US', {
+        style: 'currency',
+        currency: 'USD',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 8,
+        maximumFractionDigits: 8
       }),
     []
   );
 
-  const { reset } = useFieldApi("price");
+  const { reset } = useFieldApi('price');
 
   const defaultPrice = useMemo(() => {
     if (selected) {
@@ -108,7 +108,7 @@ const CoinPrice = ({ disabled, selected }) => {
 /* --------------------------------------------- Coins  --------------------------------------------- */
 const Coins = ({ disabled }) => {
   const { formatter, parser } = useMemo(
-    () => utils.createIntlNumberFormatter("en-US"),
+    () => utils.createIntlNumberFormatter('en-US'),
     []
   );
 
@@ -129,19 +129,19 @@ const Coins = ({ disabled }) => {
 const CurrentValue = () => {
   const { formatter, parser } = useMemo(
     () =>
-      utils.createIntlNumberFormatter("en-US", {
-        style: "currency",
-        currency: "USD",
+      utils.createIntlNumberFormatter('en-US', {
+        style: 'currency',
+        currency: 'USD',
         minimumFractionDigits: 2,
-        maximumFractionDigits: 8,
+        maximumFractionDigits: 8
       }),
     []
   );
 
-  const { value: price } = useFieldState("price");
-  const { value: coins } = useFieldState("coins");
+  const { value: price } = useFieldState('price');
+  const { value: coins } = useFieldState('coins');
 
-  const { setValue } = useFieldApi("value");
+  const { setValue } = useFieldApi('value');
 
   useEffect(() => {
     if (coins && price) {
@@ -176,7 +176,7 @@ const Flipper = ({ front, back }) => {
 
 /* --------------------------------------------- Calculator Form  --------------------------------------------- */
 const CalculatorForm = ({ disabled, coins, onChange }) => {
-  const { value } = useFieldState("coin") || {};
+  const { value } = useFieldState('coin') || {};
 
   const selected = useMemo(() => {
     return coins && coins.find((coin) => coin.symbol === value);
@@ -197,16 +197,16 @@ const Calculator = () => {
   const {
     loading,
     error,
-    data: coins,
+    data: coins
   } = useGet({
-    url: "/api/prices",
+    url: '/api/prices'
   });
 
   // console.log('DATA', coins);
 
   const disabled = loading;
 
-  const disabledClass = disabled ? styles.calculatorDisabled : "";
+  const disabledClass = disabled ? styles.calculatorDisabled : '';
 
   return (
     <div className={`calculator ${disabledClass}`}>
@@ -223,13 +223,13 @@ const Calculator = () => {
         back={
           <div className="me-back">
             <div className="me-back-content">
-              <div style={{ display: "flex", marginBottom: "10px" }}>
+              <div style={{ display: 'flex', marginBottom: '10px' }}>
                 <Info />
                 <strong>A Little About Myself!</strong>
               </div>
               <small>
                 I love robots and I love Javascript! I love them so much I have
-                a youtube channel dedicated to them{" "}
+                a youtube channel dedicated to them{' '}
                 <a href="https://www.youtube.com/@robotjs">here</a>. I built and
                 maintain Tesla’s open source form library informed, Informed is
                 an extensive react form library thats easy and fun to use. Im
@@ -243,25 +243,25 @@ const Calculator = () => {
 
       <div className="flex">
         <h3>Lets start with something cool!</h3>
-        <Tooltip title="Info">
-          Here you see a demonstration of informed, a react based form library
-          that I have worked on for years. It makes writing forms super fun and
+        <Tooltip title="Informed Example" hint="Click These Icons For Details">
+          Here you see a demonstration of informed, a React-based form library
+          I've developed over the years. It makes writing forms super fun and
           easy!
         </Tooltip>
       </div>
 
       {/* --------- Only Shows up in mobile --------- */}
-      <StatusMessage>
-        Here you see a demonstration of informed, a react based form library
-        that I have worked on for years. It makes writing forms super fun and
+      <StatusMessage title="Informed Example">
+        Here you see a demonstration of informed, a React-based form library
+        I've developed over the years. It makes writing forms super fun and
         easy!
       </StatusMessage>
 
       <CarColor />
 
       <div className="flex">
-        <h3>Look forms and API calls!</h3>
-        <Tooltip title="Info">
+        <h3>Look mom! Forms and API calls!</h3>
+        <Tooltip title="Crypto Calculator">
           What better way to demonstrate some skills than with a demo! Below is
           a little crypto calculator. The page first loads the current price of
           the top cryptocurrencys, then populates the values in a formatted and
@@ -270,7 +270,7 @@ const Calculator = () => {
       </div>
 
       {/* --------- Only Shows up in mobile --------- */}
-      <StatusMessage>
+      <StatusMessage title="Crypto Calculator">
         What better way to demonstrate some skills than with a demo! Below is a
         little crypto calculator. The page first loads the current price of the
         top cryptocurrencys, then populates the values in a formatted and
@@ -283,14 +283,14 @@ const Calculator = () => {
 
       <div className="flex">
         <h3>Whats that? Open Source Code!</h3>
-        <Tooltip title="Info">
+        <Tooltip title="Open Source Code">
           Informed is an extensive, simple, and efficient solution for creating
           basic to complex forms in React. Its a library I have been working on
           for years and makes writing forms super fun and easy!
         </Tooltip>
       </div>
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: 'flex' }}>
         <a href="https://teslamotors.github.io/informed">
           <img src="https://badgen.net/badge/Informed/Docs/purple" />
         </a>
@@ -306,7 +306,7 @@ const Calculator = () => {
       </div>
 
       {/* --------- Only Shows up in mobile --------- */}
-      <StatusMessage>
+      <StatusMessage title="Open Source Code" icon="❤️">
         Informed is an extensive, simple, and efficient solution for creating
         basic to complex forms in React. Its a library I have been working on
         for years and makes writing forms super fun and easy!
@@ -319,13 +319,13 @@ const Calculator = () => {
 
       <div className="flex">
         <h3>I wrote a robot Simulator!</h3>
-        <Tooltip title="Info">
+        <Tooltip title="Robot Viewer">
           Robot viewer is a 6 axis robotic arm Simulator that can be used to
           control open source robots.
         </Tooltip>
       </div>
 
-      <div style={{ display: "flex" }}>
+      <div style={{ display: 'flex' }}>
         <a href="https://robot-viewer-qfmqx.ondigitalocean.app/">
           <img src="https://badgen.net/badge/RobotViewer/FullSite/purple" />
         </a>
@@ -341,7 +341,7 @@ const Calculator = () => {
       </div>
 
       {/* --------- Only Shows up in mobile --------- */}
-      <StatusMessage>
+      <StatusMessage title="Robot Viewer">
         Robot viewer is a 6 axis robotic arm Simulator that can be used to
         control open source robots.
       </StatusMessage>
@@ -349,10 +349,10 @@ const Calculator = () => {
       <embed
         src="https://robot-viewer-qfmqx.ondigitalocean.app/"
         style={{
-          width: "100%",
-          height: "1000px",
-          marginTop: "2rem",
-          borderRadius: "10px",
+          width: '100%',
+          height: '1000px',
+          marginTop: '2rem',
+          borderRadius: '10px'
         }}
       />
     </div>

@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
-import TooltipPopover from "./TooltipPopover";
-import Portal from "./Portal";
-import useOutsideAlerter from "../../hooks/useOutsideAlerter";
+import React, { useEffect, useRef, useState } from 'react';
+import TooltipPopover from './TooltipPopover';
+import Portal from './Portal';
+import useOutsideAlerter from '../../hooks/useOutsideAlerter';
 
 const Info = ({ ifoRef, ...props }) => {
   return (
@@ -11,8 +11,9 @@ const Info = ({ ifoRef, ...props }) => {
   );
 };
 
-export const Tooltip = ({ children, title, openOnMount }) => {
+export const Tooltip = ({ children, title, openOnMount, hint }) => {
   const [isOn, setOn] = useState(false); // toggles dropdown visibility
+  const [showHint, setShowHint] = useState(false);
   const [coords, setCoords] = useState({}); // takes current button coordinates
   const triggerElem = useRef();
   const tooltipRef = useRef();
@@ -24,7 +25,7 @@ export const Tooltip = ({ children, title, openOnMount }) => {
     const rect = button.getBoundingClientRect();
     setCoords({
       left: rect.x + rect.width / 2 - offsetRef.current, // add half the width of the button for centering
-      top: rect.y + window.scrollY - 10, // add scrollY offset, as soon as getBountingClientRect takes on screen coords
+      top: rect.y + window.scrollY - 10 // add scrollY offset, as soon as getBountingClientRect takes on screen coords
     });
   };
 
@@ -33,6 +34,14 @@ export const Tooltip = ({ children, title, openOnMount }) => {
       offsetRef.current = 5;
       updateTooltipCoords(triggerElem.current);
       setOn(true);
+    }
+    if (hint) {
+      offsetRef.current = 5;
+      updateTooltipCoords(triggerElem.current);
+      setTimeout(() => {
+        setOn(true);
+        setShowHint(hint);
+      }, 2000);
     }
   }, []);
 
@@ -43,7 +52,10 @@ export const Tooltip = ({ children, title, openOnMount }) => {
         onClick={(e) => {
           offsetRef.current = 0;
           updateTooltipCoords(e.target);
-          setOn(!isOn);
+          setOn((prev) => {
+            return showHint ? true : !prev;
+          });
+          setShowHint(false);
         }}
       />
       {isOn && (
@@ -56,7 +68,11 @@ export const Tooltip = ({ children, title, openOnMount }) => {
               updateTooltipCoords(btnRef.current.buttonNode)
             }
           >
-            <div>{children}</div>
+            {showHint ? (
+              <div className="hint">{hint}</div>
+            ) : (
+              <div>{children}</div>
+            )}
           </TooltipPopover>
         </Portal>
       )}
