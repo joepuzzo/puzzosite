@@ -91,7 +91,7 @@ input {
   margin-bottom: 1rem;
 }
 
-input:not([type='checkbox']):not([type='radio']),
+input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
   margin-bottom: 1rem;
@@ -105,7 +105,7 @@ select {
   background-color: #f4f4f4;
 }
 
-.theme-dark input:not([type='checkbox']):not([type='radio']),
+.theme-dark input:not([type="checkbox"]):not([type="radio"]),
 textarea,
 select {
   background-color: #222222;
@@ -127,7 +127,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   /* SVG background image */
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
   background-size: 0.6em;
   background-position: calc(100% - 1.3em) center;
   background-repeat: no-repeat;
@@ -136,7 +136,7 @@ select {
 }
 
 .theme-dark select {
-  background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23FFFFFF%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23FFFFFF%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
   background-color: rgb(58, 61, 65);
   color: white;
 }
@@ -439,6 +439,12 @@ a > img {
 .flex {
   display: flex;
   align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 /* This is for Car!!! */
@@ -784,4 +790,56 @@ a > img {
   line-height: 1.5;
   font-size: 1.5rem;
   gap: 10px;
+}
+
+/* Define the keyframe animation */
+@keyframes moveOffScreen {
+  to {
+    transform: translateX(
+      100vw
+    ); /* Moves the div by the width of the viewport */
+  }
+}
+
+/* Style for the div you want to animate */
+.moving-div {
+  animation: moveOffScreen 6s forwards; /* Apply the animation; takes 5s and 'forwards' keeps the final state after the animation completes */
+}
+
+/* Define the keyframe animation for entering from the left */
+@keyframes comeFromLeft {
+  from {
+    transform: translateX(
+      -100vw
+    ); /* Starts the div off the left side of the screen */
+  }
+  to {
+    transform: translateX(0); /* Ends at its actual position */
+  }
+}
+
+/* Style for the div you want to animate to enter from the left */
+.entering-div {
+  animation: comeFromLeft 5s forwards;
+}
+
+/* Keyframes for the pop effect and disappear */
+@keyframes popAndDisappear {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1); /* scales up the button */
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0; /* makes the button disappear */
+  }
+}
+
+/* The pop and disappear class */
+.pop-and-disappear {
+  animation: popAndDisappear 1s forwards; /* 'forwards' keeps the final state (disappeared) after the animation completes */
 }
