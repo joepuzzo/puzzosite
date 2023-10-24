@@ -7,9 +7,16 @@ import { useState } from "react";
 
 export default function CarPage() {
   const router = useRouter();
-  const { title, description } = router.query;
+  const { title, description, href } = router.query;
 
   const [move, setMove] = useState(false);
+
+  const handleButtonClick = () => {
+    setMove((prev) => !prev);
+    setTimeout(() => {
+      window.location.href = href;
+    }, 4000); // Delay of 4 seconds
+  };
 
   return (
     <div className={styles.container}>
@@ -30,12 +37,14 @@ export default function CarPage() {
       <div className={`${move ? "moving-div" : "entering-div"}`}>
         <Car value="red" />
       </div>
-      <button
-        className={move ? "pop-and-disappear" : ""}
-        onClick={() => setMove((prev) => !prev)}
-      >
-        Lets Go!
-      </button>
+      {href ? (
+        <button
+          className={move ? "pop-and-disappear" : ""}
+          onClick={handleButtonClick}
+        >
+          Lets Go!
+        </button>
+      ) : null}
     </div>
   );
 }
