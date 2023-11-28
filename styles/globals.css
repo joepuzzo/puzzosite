@@ -855,12 +855,10 @@ a > img {
 
 .wheel1 {
   animation: rotateWheel 3s linear infinite;
-  transform-origin: center;
   transform-origin: 164px 370px;
 }
 
 .wheel2 {
   animation: rotateWheel 3s linear infinite;
-  transform-origin: center;
   transform-origin: 1129.5px 371px;
 }
