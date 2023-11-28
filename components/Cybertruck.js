@@ -30,7 +30,7 @@ export const Cybertruck = () => {
         stroke="black"
         strokeWidth="4"
       />
-      <g id="wheel1">
+      <g className="wheel1">
         <circle
           cx="164"
           cy="370"
@@ -308,7 +308,7 @@ export const Cybertruck = () => {
           strokeWidth="4"
         />
       </g>
-      <g id="wheel2">
+      <g className="wheel2">
         <circle
           cx="1129.5"
           cy="371"
